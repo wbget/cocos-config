@@ -1,0 +1,10 @@
+{
+    "dist": "path to output",
+    "list": [
+        {
+            "path": "path to excel",
+            "sheet": "sheet name",
+            "name": "file name"
+        }
+    ]
+}

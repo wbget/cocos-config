@@ -1,0 +1,42 @@
+{
+  "name": "@wbget/cocos-config",
+  "description": "collection for cocos config",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "pako": "^2.0.4",
+    "path": "^0.12.7",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "mwts": "^1.2.2",
+    "np": "^7.6.2"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "version": "0.0.0",
+  "bin": {
+    "cocos-config": "bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbget/cocos-config.git"
+  },
+  "keywords": [
+    "cocos",
+    "excel"
+  ],
+  "author": "wbget",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wbget/cocos-config/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/wbget/cocos-config#readme",
+  "files": [
+    "bin",
+    "package.json"
+  ]
+}

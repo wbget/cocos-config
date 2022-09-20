@@ -1,0 +1,10 @@
+{
+    "dist": "./",
+    "list": [
+        {
+            "path": "./config",
+            "sheet": "测s",
+            "name": "test"
+        }
+    ]
+}
