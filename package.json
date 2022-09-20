@@ -12,7 +12,11 @@
     "np": "^7.6.2"
   },
   "scripts": {
-    "test": "node test"
+    "test": "node test",
+    "release": "npx np --no-cleanup --no-2fa"
+  },
+  "np": {
+    "yarn": false
   },
   "version": "0.0.0",
   "bin": {
