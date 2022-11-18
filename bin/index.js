@@ -24,7 +24,7 @@ const out = (f, s, o) => {
   const file = path.resolve(root, f) + `.xlsx`;
   const output = path.join(outPath, `${o}.bin`);
 
-  const workbook = XLSX.readFile(file);
+  const workbook = XLSX.readFile(file, { dense: true });
   const sheet = workbook.Sheets[s];
   if (!sheet) throw Error(`错误的配置表 ${file}/${s} `);
   const pakoSteam = new Transform({
@@ -33,6 +33,10 @@ const out = (f, s, o) => {
       callback();
     },
   });
+  for (const row of sheet) {
+    row.splice(0, 2);
+  }
+  delete sheet[0];
   const stream = XLSX.stream.to_csv(sheet, {
     blankrows: false,
     RS: '|',
