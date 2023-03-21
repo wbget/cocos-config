@@ -6,14 +6,15 @@ const fs = require('fs');
 const { Transform } = require('stream');
 const pako = require('pako');
 const color = require('colorette');
+const { version } = require('../package.json');
 
+console.log(color.bgBlack(color.dim(`工具版本：${version}`)));
 const configPath = process.argv[2];
 if (!configPath) {
   console.error('ERROR: 需要指定配置');
   process.exit(-1);
 }
 const from = path.resolve(process.cwd(), configPath);
-console.log(color.bgBlack(color.dim(`工具版本：1.0.1`)));
 console.log(`配置：${color.green(from)}`);
 const config = JSON.parse(fs.readFileSync(from).toString('utf8'));
 
