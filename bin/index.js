@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const { Transform } = require('stream');
 const pako = require('pako');
-require('colors');
+const color = require('colorette');
 
 const configPath = process.argv[2];
 if (!configPath) {
@@ -13,7 +13,8 @@ if (!configPath) {
   process.exit(-1);
 }
 const from = path.resolve(process.cwd(), configPath);
-console.log(`配置：${from.green}`);
+console.log(color.bgBlack(color.dim(`工具版本：1.0.1`)));
+console.log(`配置：${color.green(from)}`);
 const config = JSON.parse(fs.readFileSync(from).toString('utf8'));
 
 const root = path.dirname(from);
@@ -43,14 +44,16 @@ const out = (f, s, o) => {
   });
   stream.pipe(pakoSteam).pipe(fs.createWriteStream(output));
   console.log(
-    `${f}`.green + `(${s})`.yellow,
+    `${color.green(f)}` + color.yellow(`(${s})`),
     '==>',
-    `${o}`.cyan,
-    `path: ${output}`.yellow
+    color.cyan(`${o}`),
+    color.yellow(`path: ${output}`)
   );
 };
 
 config.list.forEach(v => {
   out(v.path, v.sheet, v.name);
 });
-console.log(`收集时间：${new Date().toLocaleString()}`.dim.bgBlack);
+console.log(
+  color.dim(color.bgBlack(`收集时间：${new Date().toLocaleString()}`))
+);

@@ -2,7 +2,7 @@
   "name": "@wbget/cocos-config",
   "description": "collection for cocos config",
   "dependencies": {
-    "colors": "^1.4.0",
+    "colorette": "^2.0.19",
     "pako": "^2.0.4",
     "xlsx": "^0.18.5"
   },
